@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+}
+
+.ads-container {
+    margin: 0 auto;
+    width: 994px;
+
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.images-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image {
+    border-radius: 3px;
+    margin: 16px 8px;
+    width: 310px;
+    height: 196px;
+}
+
+.image:first-child {
+    margin-left: 16px;
+}
+
+.image:last-child {
+    margin-right: 16px;
+}
