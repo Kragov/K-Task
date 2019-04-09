@@ -14,16 +14,34 @@ class Images extends React.Component {
     render() {
         return (
             <div className="ads-container">
+                <div className="vip-ads-text">VIP объявления</div>
                 <div className="images-container">
                     {this.state.ads.ads.map((accountInfo, index) => (
-                        <img
-                            className="image"
-                            src={`https://content.kufar.by/line_thumbs_2x/58/${
-                                accountInfo.images[0].id
-                            }.jpg`}
+                        <div
+                            className="adv"
+                            style={{
+                                backgroundImage:
+                                    "url(" +
+                                    `https://content.kufar.by/line_thumbs_2x/58/${
+                                        accountInfo.images[0].id
+                                    }.jpg` +
+                                    ")"
+                            }}
                             alt="img"
                             key={index}
-                        />
+                        >
+                            <div className="subject">{accountInfo.subject}</div>
+                            <div className="place">{`${
+                                accountInfo.ad_parameters[
+                                    accountInfo.ad_parameters.length - 2
+                                ].vl
+                            }, ${
+                                accountInfo.ad_parameters[
+                                    accountInfo.ad_parameters.length - 1
+                                ].vl
+                            }`}</div>
+                            <div className="price">{accountInfo.price_byn + ' р'}</div>
+                        </div>
                     ))}
                 </div>
             </div>
